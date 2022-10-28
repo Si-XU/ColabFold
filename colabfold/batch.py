@@ -1226,7 +1226,8 @@ def run(
         model_extension = "_ptm"
     else:
         raise ValueError(f"Unknown model_type {model_type}")
-
+        
+    logger.info(f"model type is : {model_extension}")
     if rank_by == "auto":
         # score complexes by ptmscore and sequences by plddt
         rank_by = "plddt" if not is_complex else "ptmscore"
@@ -1516,7 +1517,7 @@ def run(
         else:
             is_done_marker.touch()
 
-    logger.info("Done")
+    logger.info("Done In SiXU repo")
 
 
 def set_model_type(is_complex: bool, model_type: str) -> str:
